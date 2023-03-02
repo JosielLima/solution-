@@ -1,0 +1,254 @@
+//Variables
+
+$primary-color: hsl(35, 77%, 62%);
+$secundary-color: hsl(5, 85%, 63%);
+
+$neutral-base: hsl(36, 100%, 99%);
+$neutral-grayish: hsl(233, 8%, 79%);
+$neutral-blue: hsl(236, 13%, 42%);
+$neutral-black: hsl(240, 100%, 5%);
+
+// For custom fonts
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype")
+}
+
+html,
+body {
+  display: grid;
+  grid-template-columns: 1fr min(1200px, calc(100% - 16px)) 1fr;
+  min-block-size: 100vh;
+  margin-top: 16px;
+  & > * {
+    grid-column: 2;
+  }
+}
+
+p, button, h1, h2, h3, h4, h5, h6, a {
+  font-family: "Inter";
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 800;
+  margin: 0;
+}
+
+h5 {
+  color: $primary-color;
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+h6 {
+  font-weight: bold;
+  font-size: 1em;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+p {
+  color: $neutral-blue;
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 1.6em;
+  margin: 0;
+}
+
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: $neutral-blue;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.full-bleed {
+  grid-column: 1 / -1;
+}
+
+.header {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.nav-header {
+  @media screen and (max-width:768px) {
+    display: none;
+  }
+  @media screen and (min-width:769px) {
+    display: flex;
+    gap: 24px;
+  }
+}
+
+#modal {
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  transition: all 0.6s ease;
+  display: none;
+  // opacity: 0;
+  // visibility: hidden;
+  // &.visible {
+  //   opacity: 1;
+  //   visibility: visible;
+  // }
+}
+
+.nav-mobile {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+  padding: 16px;
+  margin-left: 25%;
+}
+
+.btn-close_nav{
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: flex-end;
+  button {
+    background: none;
+    border: none;
+    font-size: 2em;
+    font-family: "Inter";
+  }
+}
+
+.menu-burger {
+  @media screen and (min-width:769px) {
+    display: none;
+  }
+}
+
+.banner {
+  background-image: url("./assets/images/image-web-3-mobile.jpg");
+  background-size: cover;
+  width: 100%;
+  min-height: 320px;
+}
+
+.principle-paragraph {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.call-to-action {
+  background-color: $secundary-color;
+  border: none;
+  border-radius: 1px;
+  color: $neutral-base;
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  padding: 12px 32px;
+  &:hover {
+    background-color: $neutral-black;
+    cursor: pointer;
+  }
+}
+
+.container-call {
+  margin-bottom: 24px;
+}
+
+.container-news {
+  background-color: $neutral-black;
+  padding: 16px;
+  margin-bottom: 24px;
+  & > p, h6 {
+    color: $neutral-base;
+  }
+  & > h5 {
+    color: $primary-color;
+  }
+  & > p {
+    opacity: 0.6;
+  }
+  & > hr {
+    color: $neutral-black;
+    opacity: 0.3;
+    margin-top:16px;
+    margin-bottom:16px;
+  }
+  h6 {
+    &:hover {
+      color: $primary-color;
+      cursor: pointer;
+    }
+  }
+}
+
+.topic-image {
+  display: flex;
+  height: 100px;
+  margin-bottom: 16px;
+  & > img {
+    border-radius: 1px;
+    margin-right: 16px;
+  }
+  .dot {
+    color: $neutral-grayish;
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  h6 {
+    &:hover {
+      color: $secundary-color;
+      cursor: pointer;
+    }
+  }
+}
+
+.attribution {
+  margin-top: 48px;
+}
+
+@media screen and (min-width: 768px) {
+  .main-desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .topic-desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+  }
+
+  .banner {
+    background-image: url("./assets/images/image-web-3-mobile.jpg");
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+  }
+}
+
